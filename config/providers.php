@@ -8,8 +8,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | ServiceProviders in this array will only be loaded if
-    | your application's environment value equals either
-    | 'development', 'local' or 'dev'. Simple, right?
+    | your application's environment value equals any of
+    | the values configured below. Pretty neat, huh?
     |
     */
     'load' => [
