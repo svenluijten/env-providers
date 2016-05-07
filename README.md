@@ -5,7 +5,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
 [![Code Climate][ico-codeclimate]][link-codeclimate]
 [![Code Quality][ico-quality]][link-quality]
 [![SensioLabs Insight][ico-insight]][link-insight]
@@ -68,14 +67,12 @@ welcomed. See the [contributors page](../../graphs/contributors) for all contrib
 [ico-version]: https://img.shields.io/packagist/v/sven/env-providers.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/env-providers.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/svenluijten/env-providers.svg?style=flat-square
 [ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/env-providers.svg?style=flat-square
 [ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/env-providers.svg?style=flat-square
 [ico-insight]: https://img.shields.io/sensiolabs/i/insight-id.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/sven/env-providers
 [link-downloads]: https://packagist.org/packages/sven/env-providers
-[link-travis]: https://travis-ci.org/svenluijten/env-providers
 [link-codeclimate]: https://codeclimate.com/github/svenluijten/env-providers
 [link-quality]: https://scrutinizer-ci.com/g/svenluijten/env-providers/?branch=master
 [link-insight]: https://insight.sensiolabs.com/projects/insight-id
