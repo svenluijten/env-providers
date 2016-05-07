@@ -56,6 +56,8 @@ In the `load` array, you should add all service providers you want to load when
 the application's environment is equal to any of the values in the `development_environments`
 array.
 
+**Note**: You can set your application's environment in either `config/app.php`
+under `env` or via your `.env` file. If you want to manage your `.env` file via
 artisan, you can check out [sven/flex-env](https://git.io/flex).
 
 ## Contributing
