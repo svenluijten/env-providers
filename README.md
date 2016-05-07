@@ -26,7 +26,7 @@ Or add the package to your dependencies in `composer.json` and run
 ```json
 {
     "require": {
-        "sven/env-providers": "^1.0"
+        "sven/env-providers": "^2.0"
     }
 }
 ```
