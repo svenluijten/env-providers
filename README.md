@@ -52,9 +52,13 @@ $ php artisan vendor:publish --provider="Sven\EnvProviders\EnvServiceProvider"
 After that, you should have see the file `config/providers.php`. In the created
 configuration file you can see two arrays: `load` and `development_environments`.
 
-In the `load` array, you should add all service providers you want to load when
-the application's environment is equal to any of the values in the `development_environments`
-array.
+There are two nested arrays in the `load` array: `providers` and `aliases`. These
+follow the exact same signature as the default ones in `config/app.php`. Add
+ServiceProviders to the `providers` array, and register facades via the `aliases`.
+
+You can add values to your `development_environments` to whatever you prefer. I've
+assumed some sensible defaults, but feel free to change these or add to them as much
+as you want.
 
 **Note**: You can set your application's environment in either `config/app.php`
 under `env` or via your `.env` file. If you want to manage your `.env` file via
