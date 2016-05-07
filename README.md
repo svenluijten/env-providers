@@ -56,6 +56,8 @@ In the `load` array, you should add all service providers you want to load when
 the application's environment is equal to any of the values in the `development_environments`
 array.
 
+artisan, you can check out [sven/flex-env](https://git.io/flex).
+
 ## Contributing
 All contributions (in the form on pull requests, issues and feature-requests) are
 welcomed. See the [contributors page](../../graphs/contributors) for all contributors.
