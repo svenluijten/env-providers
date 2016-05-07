@@ -26,5 +26,5 @@ return [
     | own, but we've assumed sensible defaults. Simple.
     |
     */
-    'development_environments' => ['dev','development', 'local'],
+    'development_environments' => ['dev', 'development', 'local'],
 ];

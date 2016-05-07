@@ -27,7 +27,7 @@ class EnvServiceProvider extends ServiceProvider
     {
         $shouldLoadDevProviders = in_array(
             $this->app->environment(),
-            config('providers.development_environments')
+            config('providers.development_environments') ?: []
         );
 
         if ($shouldLoadDevProviders) {
