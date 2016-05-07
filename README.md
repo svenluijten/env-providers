@@ -56,7 +56,7 @@ There are two nested arrays in the `load` array: `providers` and `aliases`. Thes
 follow the exact same signature as the default ones in `config/app.php`. Add
 ServiceProviders to the `providers` array, and register facades via the `aliases`.
 
-You can add values to your `development_environments` to whatever you prefer. I've
+You can add values to the `development_environments` in the configuration file. I've
 assumed some sensible defaults, but feel free to change these or add to them as much
 as you want.
 
