@@ -25,12 +25,12 @@ class EnvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $shouldLoadDevProviders = in_array(
+        $shouldLoadProviders = in_array(
             $this->app->environment(),
             config('providers.development_environments') ?: []
         );
 
-        if ($shouldLoadDevProviders) {
+        if ($shouldLoadProviders) {
             foreach (config('providers.load') as $provider) {
                 $this->app->register($provider);
             }
