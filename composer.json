@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sven\\EnvProvider\\": "src/"
+            "Sven\\EnvProviders\\": "src/"
         }
     }
 }
