@@ -69,10 +69,10 @@ welcomed. See the [contributors page](../../graphs/contributors) for all contrib
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/env-providers.svg?style=flat-square
 [ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/env-providers.svg?style=flat-square
 [ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/env-providers.svg?style=flat-square
-[ico-insight]: https://img.shields.io/sensiolabs/i/insight-id.svg?style=flat-square
+[ico-insight]: https://img.shields.io/sensiolabs/i/510c4368-2414-43ae-85e7-486590a4961a.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/sven/env-providers
 [link-downloads]: https://packagist.org/packages/sven/env-providers
 [link-codeclimate]: https://codeclimate.com/github/svenluijten/env-providers
 [link-quality]: https://scrutinizer-ci.com/g/svenluijten/env-providers/?branch=master
-[link-insight]: https://insight.sensiolabs.com/projects/insight-id
+[link-insight]: https://insight.sensiolabs.com/projects/510c4368-2414-43ae-85e7-486590a4961a
