@@ -1,6 +1,6 @@
-![env-providers](https://cloud.githubusercontent.com/assets/11269635/14202863/c0b21296-f7fa-11e5-9ef1-2f684537ee24.jpg)
+![env-providers](https://cloud.githubusercontent.com/assets/11269635/15094471/5abfd4ec-14a5-11e6-8969-63bc9bcfd6b6.jpg)
 
-# Package
+# Laravel EnvProviders
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -11,8 +11,8 @@
 [![SensioLabs Insight][ico-insight]][link-insight]
 
 A more finetuned way of managing your service providers in Laravel. This package
-allows you to only load certain service providers in the development or staging
-stage of your project.
+allows you to only load certain service providers when your application is in
+the development, local or staging environment.
 
 ## Installation
 Via [composer](http://getcomposer.org):
