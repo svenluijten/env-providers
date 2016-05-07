@@ -31,8 +31,12 @@ class EnvServiceProvider extends ServiceProvider
         );
 
         if ($shouldLoadProviders) {
-            foreach (config('providers.load') as $provider) {
+            foreach (config('providers.load.providers') as $provider) {
                 $this->app->register($provider);
+            }
+
+            foreach (config('providers.load.aliases') as $abstract => $alias) {
+                $this->app->alias($abstract, $alias);
             }
         }
     }

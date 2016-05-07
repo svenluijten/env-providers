@@ -4,16 +4,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Development ServiceProviders
+    | Loading
     |--------------------------------------------------------------------------
     |
-    | ServiceProviders in this array will only be loaded if
-    | your application's environment value equals any of
-    | the values configured below. Pretty neat, huh?
+    | Here you may determine what providers and aliases
+    | get loaded when your application's environment
+    | equals any of the environments further down.
     |
     */
     'load' => [
-        //
+        'providers' => [
+            // Foo\Bar\FooBarServiceProvider::class,
+        ],
+
+        'aliases' => [
+            // 'Facade' => Foo\Bar\Facade::class,
+        ],
     ],
 
     /*
