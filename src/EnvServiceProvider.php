@@ -31,13 +31,32 @@ class EnvServiceProvider extends ServiceProvider
         );
 
         if ($shouldLoadProviders) {
-            foreach (config('providers.load.providers') as $provider) {
-                $this->app->register($provider);
-            }
+            $this->registerProviders();
+            $this->registerAliases();
+        }
+    }
 
-            foreach (config('providers.load.aliases') as $abstract => $alias) {
-                $this->app->alias($abstract, $alias);
-            }
+    /**
+     * Register the development Service Providers.
+     *
+     * @return void
+     */
+    protected function registerProviders()
+    {
+        foreach (config('providers.load.providers') as $provider) {
+            $this->app->register($provider);
+        }
+    }
+
+    /**
+     * Register the development aliases / facades.
+     *
+     * @return void
+     */
+    protected function registerAliases()
+    {
+        foreach (config('providers.load.aliases') as $abstract => $alias) {
+            $this->app->alias($abstract, $alias);
         }
     }
 }
