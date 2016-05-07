@@ -27,7 +27,7 @@ Or add the package to your dependencies in `composer.json` and run
 ```json
 {
     "require": {
-        "sven/env-providers": "*"
+        "sven/env-providers": "^1.0"
     }
 }
 ```
@@ -50,11 +50,12 @@ do so, run the following command:
 $ php artisan vendor:publish --provider="Sven\EnvProviders\EnvServiceProvider"
 ```
 
-After that, you should have a file called `providers.php` in your `config/` directory.
-This file should be fairly straightforward, but I'll walk you through it here.
+After that, you should have see the file `config/providers.php`. In the created
+configuration file you can see two arrays: `load` and `development_environments`.
 
-### Dev
-
+In the `load` array, you should add all service providers you want to load when
+the application's environment is equal to any of the values in the `development_environments`
+array.
 
 ## Contributing
 All contributions (in the form on pull requests, issues and feature-requests) are

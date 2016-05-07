@@ -13,7 +13,9 @@ class EnvServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../config/providers.php' => config_path('providers.php'),
+        ], 'config');
     }
 
     /**
@@ -23,14 +25,15 @@ class EnvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $environments = collect([
-            'dev' => ['local', 'dev', 'development'],
-            'staging' => ['staging', 'testing', 'test'],
-            'production' => ['production', 'live', 'prod'],
-        ]);
+        $shouldLoadDevProviders = in_array(
+            $this->app->environment(),
+            config('providers.development_environments')
+        );
 
-        $environments->each(function ($key, $value) {
-            dd($value);
-        });
+        if ($shouldLoadDevProviders) {
+            foreach (config('providers.load') as $provider) {
+                $this->app->register($provider);
+            }
+        }
     }
 }
