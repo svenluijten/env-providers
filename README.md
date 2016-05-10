@@ -26,7 +26,7 @@ Or add the package to your dependencies in `composer.json` and run
 ```json
 {
     "require": {
-        "sven/env-providers": "^2.0"
+        "sven/env-providers": "^3.0"
     }
 }
 ```
@@ -49,16 +49,33 @@ do so, run the following command:
 $ php artisan vendor:publish --provider="Sven\EnvProviders\EnvServiceProvider"
 ```
 
-After that, you should have see the file `config/providers.php`. In the created
-configuration file you can see two arrays: `load` and `development_environments`.
+After that, you should have see the file `config/providers.php`.
 
-There are two nested arrays in the `load` array: `providers` and `aliases`. These
-follow the exact same signature as the default ones in `config/app.php`. Add
-ServiceProviders to the `providers` array, and register facades via the `aliases`.
+## Config
 
-You can add values to the `development_environments` in the configuration file. I've
-assumed some sensible defaults, but feel free to change these or add to them as much
-as you want.
+The `config/providers.php` file includes a array of provider groups. A provider group has 3 keys `environments`, `providers`, and `aliases`. The group's `providers` and `aliases` will be registered if the current environment matches any of the values in the `environments` array. Groups with `environments` that include '*' will always be registered. 
+
+**Note**: `environments` may be a string or an array of strings.
+
+
+```php
+return [
+    // provider group
+    [
+        'environments' => ['dev', 'local'],
+
+        'providers' => [
+            // Foo\Bar\DevServiceProvider::class,
+        ],
+
+        'aliases' => [
+            // 'DevFacade' => Foo\Bar\DevFacade::class,
+        ],
+    ],
+
+    // ...
+]
+```
 
 **Note**: You can set your application's environment in either `config/app.php`
 under `env` or via your `.env` file. If you want to manage your `.env` file via

@@ -3,34 +3,59 @@
 return [
 
     /*
-    |--------------------------------------------------------------------------
-    | Loading
-    |--------------------------------------------------------------------------
-    |
-    | Here you may determine what providers and aliases
-    | get loaded when your application's environment
-    | equals any of the environments further down.
-    |
-    */
-    'load' => [
+     |--------------------------------------------------------------------------
+     | Provider Group
+     |--------------------------------------------------------------------------
+     |
+     | A list of providers and aliases to register in matching environments.
+     |
+     */
+
+    [
+        /*
+         |--------------------------------------------------------------------------
+         | Environments
+         |--------------------------------------------------------------------------
+         |
+         | Environments this group will be registered in. Groups that include the '*'
+         | environment will always be registered.
+         |
+         */
+
+        'environments' => '*',
+
         'providers' => [
-            // Foo\Bar\FooBarServiceProvider::class,
+            // Foo\Bar\AllEnvServiceProvider::class,
         ],
 
         'aliases' => [
-            // 'Facade' => Foo\Bar\Facade::class,
+            // 'AllEnvFacade' => Foo\Bar\AllEnvFacade::class,
+        ],
+    ],
+    [
+
+        'environments' => 'production',
+
+        'providers' => [
+            // Foo\Bar\ProdServiceProvider::class,
+        ],
+
+        'aliases' => [
+            // 'ProdFacade' => Foo\Bar\ProdFacade::class,
+        ],
+    ],
+    [
+
+        'environments' => ['dev', 'local'],
+
+        'providers' => [
+            // Foo\Bar\DevServiceProvider::class,
+        ],
+
+        'aliases' => [
+            // 'DevFacade' => Foo\Bar\DevFacade::class,
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Development Environments
-    |--------------------------------------------------------------------------
-    |
-    | Here you can determine in what environments the above
-    | ServiceProviders should be loaded. You may add your
-    | own, but we've assumed sensible defaults. Simple.
-    |
-    */
-    'development_environments' => ['dev', 'development', 'local'],
+
 ];

@@ -16,6 +16,7 @@ class EnvServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/providers.php' => config_path('providers.php'),
         ], 'config');
+
     }
 
     /**
@@ -25,38 +26,60 @@ class EnvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $shouldLoadProviders = in_array(
-            $this->app->environment(),
-            config('providers.development_environments') ?: []
-        );
 
-        if ($shouldLoadProviders) {
-            $this->registerProviders();
-            $this->registerAliases();
+        $groups = config('providers', []);
+
+        foreach($groups as $group){
+            $groupEnvironments = (array) array_get($group, 'environments', []);
+
+            if($this->groupMatchesEnvironment($groupEnvironments)){
+                $providers = array_get($group, 'providers', []);
+                $aliases = array_get($group, 'aliases', []);
+
+                $this->registerProviders($providers);
+                $this->registerAliases($aliases);
+            }
         }
     }
 
     /**
      * Register the development Service Providers.
-     *
-     * @return void
+     * @param array $providers
      */
-    protected function registerProviders()
+    protected function registerProviders(array $providers)
     {
-        foreach (config('providers.load.providers') as $provider) {
+        foreach ($providers as $provider) {
             $this->app->register($provider);
         }
     }
 
     /**
      * Register the development aliases / facades.
-     *
-     * @return void
+     * @param array $aliases
      */
-    protected function registerAliases()
+    protected function registerAliases(array $aliases)
     {
-        foreach (config('providers.load.aliases') as $abstract => $alias) {
+        foreach ($aliases as $abstract => $alias) {
             $this->app->alias($abstract, $alias);
         }
     }
+
+    /**
+     * @param string|array $groupEnvironments
+     * @return bool
+     */
+    protected function groupMatchesEnvironment($groupEnvironments)
+    {
+        $groupEnvironments = (array)$groupEnvironments;
+        if(in_array('*', $groupEnvironments)){
+            return true;
+        }
+
+        if(in_array($this->app->environment(), $groupEnvironments)){
+            return true;
+        }
+
+        return false;
+    }
+
 }
