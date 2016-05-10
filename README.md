@@ -53,7 +53,7 @@ After that, you should have see the file `config/providers.php`.
 
 ## Config
 
-The `config/providers.php` file includes a array of provider groups. A provider group has 3 keys `environments`, `providers`, and `aliases`. The group's `providers` and `aliases` will be registered if the current environment matches any of the values in the `environments` array. Groups with `environments` that include '*' will always be registered. 
+The `config/providers.php` file includes a array of provider groups. A provider group has 3 keys `environments`, `providers`, and `aliases`. The group's `providers` and `aliases` will be registered if the current environment matches any of the values in the `environments` array. Groups with `environments` that include `*` will always be registered. 
 
 **Note**: `environments` may be a string or an array of strings.
 
