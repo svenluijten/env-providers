@@ -35,7 +35,7 @@ class EnvServiceProvider extends ServiceProvider
     /**
      * Load in the provider groups.
      *
-     * @param  array  $group The provider group to load in.
+     * @param array $group The provider group to load in.
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class EnvServiceProvider extends ServiceProvider
     /**
      * Register the application's service providers.
      *
-     * @param  array $providers The providers to load in.
+     * @param array $providers The providers to load in.
      *
      * @return void
      */
@@ -76,7 +76,7 @@ class EnvServiceProvider extends ServiceProvider
     /**
      * Register the application's facades.
      *
-     * @param  array $aliases An associative array of aliases.
+     * @param array $aliases An associative array of aliases.
      *
      * @return void
      */
