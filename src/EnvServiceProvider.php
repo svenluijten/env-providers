@@ -42,7 +42,7 @@ class EnvServiceProvider extends ServiceProvider
     private function loadProviderGroup(array $group)
     {
         $shouldLoad = in_array(
-            $this->app->environment(),
+            [$this->app->environment(), '*'],
             array_get($group, 'environments', [])
         );
 
