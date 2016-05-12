@@ -41,12 +41,9 @@ class EnvServiceProvider extends ServiceProvider
      */
     private function loadProviderGroup(array $group)
     {
-        $shouldLoad = in_array(
-            [$this->app->environment(), '*'],
-            array_get($group, 'environments', [])
-        );
+        $environments = array_get($group, 'environments', []);
 
-        if (!$shouldLoad) {
+        if (!$this->shouldLoadFrom($environments)) {
             return;
         }
 
@@ -57,6 +54,18 @@ class EnvServiceProvider extends ServiceProvider
         $this->registerAliases(
             array_get($group, 'aliases', [])
         );
+    }
+
+    /**
+     * Determine whether or not the providers and aliases should be loaded.
+     *
+     * @param array $environments The environments to search.
+     *
+     * @return bool Whether or not the current environment should load the providers.
+     */
+    private function shouldLoadFrom(array $environments)
+    {
+        return in_array($this->app->environment(), $environments) || in_array('*', $environments);
     }
 
     /**
