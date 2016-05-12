@@ -57,8 +57,12 @@ certain environment.
 
 ### Environments
 In the `environments` array you can define what environments the provider group
-should respond to. You may use an asterisk (`*`) to have that group respond to
-all environments. This means it will be loaded regardless.
+should respond to. You may use an asterisk (`*`) to make that group's providers
+and aliases load regardless of the application's environment.
+
+**Note**: You can set your application's environment in either `config/app.php`
+under `env` or via your `.env` file. If you want to manage your `.env` file via
+`php artisan`, you can check out [sven/flex-env](https://git.io/flex).
 
 ### Providers
 The `providers` array is where you can put the providers you want to have loaded
@@ -66,13 +70,10 @@ in the defined environments. This should be pretty straight forward as it is the
 same as how you would register service providers in `config/app.php`.
 
 ### Aliases
-In the `aliases` array you may put all the aliases (facades) you want to load in.
-This is also the same as how you would register aliases in your `config/app.php`
-configuration file.
+In the `aliases` array you may put all the aliases (facades) you want to register.
+As with the providers, this is the same as how you would register aliases in the
+default `config/app.php` configuration file.
 
-**Note**: You can set your application's environment in either `config/app.php`
-under `env` or via your `.env` file. If you want to manage your `.env` file via
-artisan, you can check out [sven/flex-env](https://git.io/flex).
 
 ## Contributing
 All contributions (in the form on pull requests, issues and feature-requests) are
