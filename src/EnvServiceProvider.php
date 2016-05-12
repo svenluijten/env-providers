@@ -25,37 +25,73 @@ class EnvServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $shouldLoadProviders = in_array(
-            $this->app->environment(),
-            config('providers.development_environments') ?: []
-        );
+        $providerGroups = config('providers', []);
 
-        if ($shouldLoadProviders) {
-            $this->registerProviders();
-            $this->registerAliases();
+        foreach ($providerGroups as $group) {
+            $this->loadProviderGroup($group);
         }
     }
 
     /**
-     * Register the development Service Providers.
+     * Load in the provider groups.
+     *
+     * @param array $group The provider group to load in.
      *
      * @return void
      */
-    protected function registerProviders()
+    private function loadProviderGroup(array $group)
     {
-        foreach (config('providers.load.providers') as $provider) {
+        $environments = array_get($group, 'environments', []);
+
+        if (!$this->shouldLoadFrom($environments)) {
+            return;
+        }
+
+        $this->registerProviders(
+            array_get($group, 'providers', [])
+        );
+
+        $this->registerAliases(
+            array_get($group, 'aliases', [])
+        );
+    }
+
+    /**
+     * Determine whether or not the providers and aliases should be loaded.
+     *
+     * @param array $environments The environments to search.
+     *
+     * @return bool Whether or not the current environment should load the providers.
+     */
+    private function shouldLoadFrom(array $environments)
+    {
+        return in_array($this->app->environment(), $environments) || in_array('*', $environments);
+    }
+
+    /**
+     * Register the application's service providers.
+     *
+     * @param array $providers The providers to load in.
+     *
+     * @return void
+     */
+    private function registerProviders(array $providers)
+    {
+        foreach ($providers as $provider) {
             $this->app->register($provider);
         }
     }
 
     /**
-     * Register the development aliases / facades.
+     * Register the application's facades.
+     *
+     * @param array $aliases An associative array of aliases.
      *
      * @return void
      */
-    protected function registerAliases()
+    private function registerAliases(array $aliases)
     {
-        foreach (config('providers.load.aliases') as $abstract => $alias) {
+        foreach ($aliases as $alias => $abstract) {
             $this->app->alias($abstract, $alias);
         }
     }
