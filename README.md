@@ -50,7 +50,7 @@ do so, run the following command:
 $ php artisan vendor:publish --provider="Sven\EnvProviders\EnvServiceProvider"
 ```
 
-After that, you should have see the file `config/providers.php`. In the created
+After that, you should see the file `config/providers.php`. In the created
 configuration file you can see 2 pre-defined provider groups that will help you
 set up what providers and aliases should be loaded when the application is in a
 certain environment.
@@ -66,13 +66,13 @@ under `env` or via your `.env` file. If you want to manage your `.env` file via
 
 ### Providers
 The `providers` array is where you can put the providers you want to have loaded
-in the defined environments. This should be pretty straight forward as it is the
-same as how you would register service providers in `config/app.php`.
+in the defined environments. This should be pretty straight forward as it is similar
+to how you would register service providers in `config/app.php`.
 
 ### Aliases
-In the `aliases` array you may put all the aliases (facades) you want to register.
-As with the providers, this is the same as how you would register aliases in the
-default `config/app.php` configuration file.
+In the `aliases` array you may define all your aliases (facades). As with the providers,
+this is the same as how you would register aliases in the default `config/app.php`
+configuration file.
 
 
 ## Contributing
