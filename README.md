@@ -74,6 +74,24 @@ In the `aliases` array you may define all your aliases (facades). As with the pr
 this is the same as how you would register aliases in the default `config/app.php`
 configuration file.
 
+### Example
+
+```php
+[
+    'environments' => ['local', 'development', 'dev'],
+    'providers' => [
+        Sven\ArtisanView\ArtisanViewServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+    ],
+    'aliases' => [
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+    ],
+],
+```
+
+Do note that in this example we're only loading the Debugbar ServiceProvider and facade when our
+application is in the `local`, `development` or `dev` environment. This means that you cannot use
+the `Debugbar` facade anywhere in your project outside of those environments.
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
