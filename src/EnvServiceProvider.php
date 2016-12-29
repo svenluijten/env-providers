@@ -43,7 +43,7 @@ class EnvServiceProvider extends ServiceProvider
     {
         $environments = array_get($group, 'environments', []);
 
-        if (!$this->shouldLoadFrom($environments)) {
+        if (! $this->shouldLoadFrom($environments)) {
             return;
         }
 
