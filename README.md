@@ -43,7 +43,7 @@ Next, add the `EnvServiceProvider` to your `providers` array in `config/app.php`
 ```
 
 ## Usage
-You must publish this package's configuration file for it to work correctly. To
+You must publish this package's configuration file for it to work properly. To
 do so, run the following command:
 
 ```bash
@@ -52,8 +52,8 @@ $ php artisan vendor:publish --provider="Sven\EnvProviders\EnvServiceProvider"
 
 After that, you should see the file `config/providers.php`. In the created
 configuration file you can see 2 pre-defined provider groups that will help you
-set up what providers and aliases should be loaded when the application is in a
-certain environment.
+set up what providers and aliases should be loaded when the application is in any
+of the given environments.
 
 ### Environments
 In the `environments` array you can define what environments the provider group
@@ -89,9 +89,10 @@ configuration file.
 ],
 ```
 
-Do note that in this example we're only loading the Debugbar ServiceProvider and facade when our
-application is in the `local`, `development` or `dev` environment. This means that you cannot use
-the `Debugbar` facade anywhere in your project outside of those environments.
+Notice how we're only loading the Debugbar ServiceProvider and facade when our
+application's environment is either `local`, `development`, or `dev`. This means
+you can't use the `Debugbar` facade in your project when the environment doesn't
+match any of those.
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
