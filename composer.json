@@ -1,22 +1,45 @@
 {
-    "name": "sven/env-providers",
-    "description": "Load Laravel service providers based on your application's environment.",
-    "keywords": ["provider", "laravel", "environment", "serviceprovider"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sven Luijten",
-            "email": "svenluijten1995@gmail.com",
-            "homepage": "https://svenluijten.com"
-        }
-    ],
-    "require": {
-        "php": "^5.5.9 || ^7.0",
-        "illuminate/support": "^5.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Sven\\EnvProviders\\": "src/"
-        }
+  "name": "sven/env-providers",
+  "description": "Load Laravel service providers based on your application's environment.",
+  "keywords": [
+    "provider",
+    "laravel",
+    "environment",
+    "serviceprovider"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sven Luijten",
+      "email": "svenluijten1995@gmail.com",
+      "homepage": "https://svenluijten.com"
     }
+  ],
+  "require": {
+    "php": ">=7.1.3",
+    "illuminate/support": "5.7.* || 5.8.*"
+  },
+  "require-dev": {
+    "graham-campbell/testbench": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sven\\EnvProviders\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sven\\EnvProviders\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sven\\EnvProviders\\ServiceProvider"
+      ]
+    }
+  }
 }

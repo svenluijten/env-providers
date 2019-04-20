@@ -5,9 +5,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Software License][ico-license]](LICENSE.md)
-[![Code Climate][ico-codeclimate]][link-codeclimate]
-[![Code Quality][ico-quality]][link-quality]
-[![SensioLabs Insight][ico-insight]][link-insight]
+[![Build Status][ico-circleci]][link-circleci]
 [![StyleCI][ico-styleci]][link-styleci]
 
 A more finetuned way of managing your service providers in Laravel. This package
@@ -27,7 +25,7 @@ Or add the package to your dependencies in `composer.json` and run
 ```json
 {
     "require": {
-        "sven/env-providers": "^3.0"
+        "sven/env-providers": "^3.1"
     }
 }
 ```
@@ -106,14 +104,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/env-providers.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/env-providers.svg?style=flat-square
-[ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/env-providers.svg?style=flat-square
-[ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/env-providers.svg?style=flat-square
-[ico-insight]: https://img.shields.io/sensiolabs/i/510c4368-2414-43ae-85e7-486590a4961a.svg?style=flat-square
+[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/env-providers.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/58277758/shield
 
 [link-packagist]: https://packagist.org/packages/sven/env-providers
 [link-downloads]: https://packagist.org/packages/sven/env-providers
-[link-codeclimate]: https://codeclimate.com/github/svenluijten/env-providers
-[link-quality]: https://scrutinizer-ci.com/g/svenluijten/env-providers/?branch=master
-[link-insight]: https://insight.sensiolabs.com/projects/510c4368-2414-43ae-85e7-486590a4961a
+[link-circleci]: https://circleci.com/gh/svenluijten/env-providers
 [link-styleci]: https://styleci.io/repos/58277758
