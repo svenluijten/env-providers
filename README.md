@@ -36,7 +36,7 @@ Next, add the `EnvServiceProvider` to your `providers` array in `config/app.php`
 // config/app.php
 'providers' => [
     ...
-    Sven\EnvProviders\EnvServiceProvider::class,
+    Sven\EnvProviders\ServiceProvider::class,
 ];
 ```
 
