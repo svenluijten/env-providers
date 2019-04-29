@@ -5,7 +5,7 @@ namespace Sven\EnvProviders;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider as BaseProvider;
 
-class ServiceProvider extends BaseProvider
+class EnvServiceProvider extends BaseProvider
 {
     public function boot(): void
     {

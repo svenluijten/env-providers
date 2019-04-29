@@ -4,7 +4,7 @@ namespace Sven\EnvProviders\Tests;
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider as BaseProvider;
-use Sven\EnvProviders\ServiceProvider;
+use Sven\EnvProviders\EnvServiceProvider;
 
 class EnvProvidersTest extends TestCase
 {
@@ -17,7 +17,7 @@ class EnvProvidersTest extends TestCase
             'aliases' => [],
         ]);
 
-        $this->app->register(ServiceProvider::class);
+        $this->app->register(EnvServiceProvider::class);
 
         $providers = $this->app->getLoadedProviders();
 
@@ -37,7 +37,7 @@ class EnvProvidersTest extends TestCase
             ],
         ]);
 
-        $this->app->register(ServiceProvider::class);
+        $this->app->register(EnvServiceProvider::class);
 
         $this->assertTrue($this->app->isAlias('One'));
         $this->assertTrue($this->app->isAlias('Two'));
@@ -60,7 +60,7 @@ class EnvProvidersTest extends TestCase
 
         $this->app['env'] = 'staging';
 
-        $this->app->register(ServiceProvider::class);
+        $this->app->register(EnvServiceProvider::class);
 
         $providers = $this->app->getLoadedProviders();
 
