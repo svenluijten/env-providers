@@ -38,7 +38,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Sven\\EnvProviders\\ServiceProvider"
+        "Sven\\EnvProviders\\EnvServiceProvider"
       ]
     }
   }
