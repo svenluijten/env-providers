@@ -30,13 +30,13 @@ Or add the package to your dependencies in `composer.json` and run
 }
 ```
 
-Next, add the `EnvServiceProvider` to your `providers` array in `config/app.php`:
+Next, add the `ServiceProvider` to your `providers` array in `config/app.php`:
 
 ```php
 // config/app.php
 'providers' => [
     ...
-    Sven\EnvProviders\EnvServiceProvider::class,
+    Sven\EnvProviders\ServiceProvider::class,
 ];
 ```
 
@@ -45,7 +45,7 @@ You must publish this package's configuration file for it to work properly. To
 do so, run the following command:
 
 ```bash
-$ php artisan vendor:publish --provider="Sven\EnvProviders\EnvServiceProvider"
+$ php artisan vendor:publish --provider="Sven\EnvProviders\ServiceProvider"
 ```
 
 After that, you should see the file `config/providers.php`. In the created
