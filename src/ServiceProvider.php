@@ -27,7 +27,7 @@ class ServiceProvider extends BaseProvider
     {
         $environments = Arr::get($group, 'environments', []);
 
-        if (! $this->shouldLoadFrom($environments)) {
+        if (!$this->shouldLoadFrom($environments)) {
             return;
         }
 
