@@ -1,6 +1,6 @@
 * text=auto
 
-/.circleci        export-ignore
+/.github          export-ignore
 /tests            export-ignore
 /.editorconfig    export-ignore
 /.gitattributes   export-ignore

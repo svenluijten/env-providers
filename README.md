@@ -5,7 +5,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-circleci]][link-circleci]
+[![Build Status][ico-build]][link-build]
 [![StyleCI][ico-styleci]][link-styleci]
 
 A more finetuned way of managing your service providers in Laravel. This package
@@ -104,10 +104,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/env-providers.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/env-providers.svg?style=flat-square
-[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/env-providers.svg?style=flat-square
+[ico-build]: https://github.com/svenluijten/env-providers/workflows/Tests%20(PHP)/badge.svg
 [ico-styleci]: https://styleci.io/repos/58277758/shield
 
 [link-packagist]: https://packagist.org/packages/sven/env-providers
 [link-downloads]: https://packagist.org/packages/sven/env-providers
-[link-circleci]: https://circleci.com/gh/svenluijten/env-providers
+[link-build]: https://github.com/svenluijten/env-providers/actions?query=workflow%3ATests%20(PHP)
 [link-styleci]: https://styleci.io/repos/58277758
