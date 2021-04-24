@@ -104,10 +104,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/env-providers.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/env-providers.svg?style=flat-square
-[ico-build]: https://github.com/svenluijten/env-providers/workflows/Tests%20(PHP)/badge.svg
+[ico-build]: https://img.shields.io/github/workflow/status/svenluijten/env-providers/Tests?style=flat-square
 [ico-styleci]: https://styleci.io/repos/58277758/shield
 
 [link-packagist]: https://packagist.org/packages/sven/env-providers
 [link-downloads]: https://packagist.org/packages/sven/env-providers
-[link-build]: https://github.com/svenluijten/env-providers/actions?query=workflow%3ATests%20(PHP)
+[link-build]: https://github.com/svenluijten/env-providers/actions?query=workflow%3ATests
 [link-styleci]: https://styleci.io/repos/58277758
