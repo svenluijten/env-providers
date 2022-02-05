@@ -1,14 +1,17 @@
 name: Tests
-on: [push, pull_request]
+on: [push]
 
 jobs:
     phpunit:
-        name: PHP ${{ matrix.php }} (${{ matrix.composer_flags }})
+        name: PHP ${{ matrix.php }} (${{ matrix.dependency-version }})
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php: [7.1, 7.2, 7.3, 7.4]
-                composer_flags: ['--prefer-lowest', '']
+                php: [8.0, 8.1]
+                dependency-version: [lowest, highest]
+                exclude:
+                    - php: 8.1
+                      dependency-version: lowest
         steps:
             - uses: actions/checkout@v2.4.0
 
@@ -19,8 +22,11 @@ jobs:
                   extensions: mbstring
                   coverage: none
 
-            - name: Install Composer dependencies
-              run: composer update --no-interaction --no-ansi --no-suggest --prefer-dist ${{ matrix.composer_flags }}
+            - name: Install dependencies
+              uses: ramsey/composer-install@v1
+              with:
+                  dependency-versions: ${{ matrix.dependency-version }}
+                  composer-options: "--no-suggest --prefer-dist"
 
             - name: Execute tests
               run: vendor/bin/phpunit
