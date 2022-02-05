@@ -2,42 +2,29 @@
 
 return [
 
-    /*
-     |--------------------------------------------------------------------------
-     | Provider Groups
-     |--------------------------------------------------------------------------
-     |
-     | You may configure your environments with provider groups. Providers
-     | and aliases in a provider group will only be loaded in when your
-     | application's environment is present in the group. Effortless.
-     |
+    /**
+     * The environment aliases. For example, the "dev" group should be
+     * used when the application is in "local" or the "testing" env.
      */
-    [
-        'environments' => ['local', 'development', 'dev'],
-
-        'providers' => [
-            //
-        ],
-
-        'aliases' => [
-            //
-        ],
+    'environments' => [
+        'dev' => ['local', 'testing'],
+        'production' => ['prod'],
     ],
 
-    /*
-     |--------------------------------------------------------------------------
-     | Customize
-     |--------------------------------------------------------------------------
-     |
-     | Of course you may modify this file as much as you want.
-     | Play around and find provider groups that are right
-     | for you. I'll leave you to it now. Happy hacking!
-     |
+    /**
+     * The groups that should be loaded when the active application
+     * environment is one of the environments configured above.
      */
-    [
-        'environments' => [],
-        'providers' => [],
-        'aliases' => [],
+    'groups' => [
+        '*' => [
+            'providers' => [],
+            'aliases' => [],
+        ],
+
+        'dev' => [
+            'providers' => [],
+            'aliases' => [],
+        ],
     ],
 
 ];
