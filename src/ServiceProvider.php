@@ -16,18 +16,16 @@ class ServiceProvider extends BaseProvider
 
     public function register(): void
     {
-        $providerGroups = $this->app['config']->get('providers', []);
+        $providerGroups = $this->config('providers.groups', []);
 
-        foreach ($providerGroups as $group) {
-            $this->loadProviderGroup($group);
+        foreach ($providerGroups as $environment => $group) {
+            $this->loadProviderGroup($group, $environment);
         }
     }
 
-    private function loadProviderGroup(array $group): void
+    private function loadProviderGroup(array $group, string $environment): void
     {
-        $environments = Arr::get($group, 'environments', []);
-
-        if (!$this->shouldLoadFrom($environments)) {
+        if (!$this->shouldLoad($environment)) {
             return;
         }
 
@@ -40,10 +38,15 @@ class ServiceProvider extends BaseProvider
         );
     }
 
-    private function shouldLoadFrom(array $environments): bool
+    private function shouldLoad(string $environment): bool
     {
-        return in_array($this->app->environment(), $environments, false)
-            || in_array('*', $environments, false);
+        $environments = [
+            ...$this->config('providers.environments.'.$environment, []),
+            $environment,
+        ];
+
+        return in_array('*', $environments, strict: false)
+            || in_array($this->app->environment(), [...$environments, $environment], strict: false);
     }
 
     private function registerProviders(array $providers): void
@@ -58,5 +61,10 @@ class ServiceProvider extends BaseProvider
         foreach ($aliases as $alias => $abstract) {
             $this->app->alias($abstract, $alias);
         }
+    }
+
+    private function config(string $key, mixed $default)
+    {
+        return $this->app['config']->get($key, $default);
     }
 }
